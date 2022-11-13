@@ -1,0 +1,19 @@
+#!/bin/sh
+
+echo "BOOTSTRAPING"
+echo "skipping"
+exit 0
+echo "you passed me" $*
+echo "env:"
+printenv
+echo '---'
+source /var/task/tskey
+mkdir -p /tmp/tailscale
+# /var/runtime/tailscaled --tun=userspace-networking --socks5-server=localhost:1055 &
+/var/runtime/tailscaled --tun=userspace-networking &
+/var/runtime/tailscale up --authkey=${TAILSCALE_AUTHKEY} --hostname=aws-lambda-app
+echo Tailscale started
+# ruby /var/runtime/app.rb
+# echo "Ruby finished"
+# /var/runtime/tailscale down
+# ALL_PROXY=socks5://localhost:1055/ /var/runtime/my-app

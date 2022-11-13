@@ -1,0 +1,10 @@
+source "https://rubygems.org"
+
+gem "method_source"
+
+# The syntax_tree gem in in active development, so the api has changed since I
+# first wrote this.  Newer versions will need somee updates to this code to
+# work.
+gem 'syntax_tree', '4.3.0'
+
+ruby '~> 2.7.0'

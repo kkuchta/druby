@@ -1,0 +1,10 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "remote-object-runner"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1evvgc7m6b5mz"
+s3_prefix = "remote-object-runner"
+region = "us-west-2"
+capabilities = "CAPABILITY_IAM"
+image_repositories = ["RemoteObjectRunnerFunction=378728359471.dkr.ecr.us-west-2.amazonaws.com/remoteobjectrunner9037de47/remoteobjectrunnerfunctione5204494repo"]
